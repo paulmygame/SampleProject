@@ -17,7 +17,7 @@ class HomeView: UIView {
     
     let titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "PornHub"
+        lbl.text = "My Profile"
         lbl.textColor = .white
         lbl.font = .systemFont(ofSize: 18, weight: .bold)
         lbl.textAlignment = .center

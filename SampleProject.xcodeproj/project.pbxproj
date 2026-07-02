@@ -15,6 +15,9 @@
 		DA980C332BF2415E0094A654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA980C322BF2415E0094A654 /* Assets.xcassets */; };
 		DA980C362BF2415E0094A654 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DA980C352BF2415E0094A654 /* Base */; };
 		DA980C3F2BF248850094A654 /* BaseVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA980C3E2BF248850094A654 /* BaseVIewController.swift */; };
+		DAA6D5052C9E52260020AE8B /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAA6D5042C9E52260020AE8B /* Icons.xcassets */; };
+		DAA6D5082C9E535E0020AE8B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA6D5072C9E535E0020AE8B /* UIColor+Extension.swift */; };
+		DAB5E7CB2C75EC5800449E3E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */; };
 		DABDDA3F2C04CBD400E7DBDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */; };
 		DAD443F62C0738BA00CCCCD6 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD443F52C0738BA00CCCCD6 /* CustomViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +35,9 @@
 		DA980C352BF2415E0094A654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA980C372BF2415E0094A654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA980C3E2BF248850094A654 /* BaseVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVIewController.swift; sourceTree = "<group>"; };
+		DAA6D5042C9E52260020AE8B /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		DAA6D5072C9E535E0020AE8B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DAD443F52C0738BA00CCCCD6 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,8 @@
 		DA980C282BF2415D0094A654 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				DAA6D5062C9E53380020AE8B /* Extensions */,
+				DAA6D5032C9E50970020AE8B /* Assets */,
 				DA980C402BF254690094A654 /* View */,
 				DA980C3D2BF2486A0094A654 /* Base */,
 				DA980C292BF2415D0094A654 /* AppDelegate.swift */,
@@ -112,8 +120,25 @@
 			children = (
 				DAD443F42C07389B00CCCCD6 /* TableViewCell */,
 				DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */,
+				DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DAA6D5032C9E50970020AE8B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DAA6D5042C9E52260020AE8B /* Icons.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DAA6D5062C9E53380020AE8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAA6D5072C9E535E0020AE8B /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DAD443F42C07389B00CCCCD6 /* TableViewCell */ = {
@@ -186,6 +211,7 @@
 			files = (
 				DA980C332BF2415E0094A654 /* Assets.xcassets in Resources */,
 				DA980C362BF2415E0094A654 /* Base in Resources */,
+				DAA6D5052C9E52260020AE8B /* Icons.xcassets in Resources */,
 				DA980C312BF2415D0094A654 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,7 +270,9 @@
 				DA980C3F2BF248850094A654 /* BaseVIewController.swift in Sources */,
 				DA980C2A2BF2415D0094A654 /* AppDelegate.swift in Sources */,
 				DABDDA3F2C04CBD400E7DBDF /* HomeView.swift in Sources */,
+				DAB5E7CB2C75EC5800449E3E /* ProfileView.swift in Sources */,
 				DA980C2C2BF2415D0094A654 /* SceneDelegate.swift in Sources */,
+				DAA6D5082C9E535E0020AE8B /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

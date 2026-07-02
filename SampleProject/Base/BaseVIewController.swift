@@ -8,8 +8,14 @@
 import UIKit
 
 class BaseVIewController: ViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         
+    }
+    
+    override func setupView() {
+        self.view.backgroundColor = .red
     }
 }

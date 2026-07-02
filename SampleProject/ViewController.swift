@@ -16,12 +16,43 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return view
     }()
     
+    lazy var profileView: ProfileView = {
+        let view = ProfileView()
+        view.backgroundColor = .orange
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 50
+        view.layer.borderColor = UIColor(hex: "#000000")?.cgColor
+        view.layer.borderWidth = 1
+        return view
+    }()
+    
+    lazy var profileNameView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    lazy var profileNameLbl: UILabel = {
+        let lbl = UILabel()
+        lbl.text = "Paul Eduard Lapiceros"
+        lbl.textColor = .black
+        lbl.textAlignment = .center
+        lbl.font = .systemFont(ofSize: 12, weight: .bold)
+        return lbl
+    }()
+    
+    lazy var profileEditBtn: UIButton = {
+        let btn = UIButton()
+        btn.setBackgroundImage(UIImage(named: "edit_icon"), for: .normal)
+        btn.contentMode = .scaleAspectFit
+        return btn
+    }()
+    
     lazy var contentTable: UITableView = {
         let tbl = UITableView()
-        tbl.register(CustomViewCell.self, forCellReuseIdentifier: "cellId")
         tbl.delegate = self
         tbl.dataSource = self
         tbl.separatorColor = UIColor.white
+        tbl.register(CustomViewCell.self, forCellReuseIdentifier: "cellId")
         return tbl
     }()
    
@@ -44,25 +75,57 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
              }
         }
         
-        view.addSubview(contentTable)
-        contentTable.snp.makeConstraints { make in
-            make.top.equalTo(mainView.snp.bottom).offset(5)
+        view.addSubview(profileView)
+        profileView.snp.makeConstraints { make in
+            make.top.equalTo(mainView.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+        
+        view.addSubview(profileNameView)
+        profileNameView.snp.makeConstraints { make in
+            make.top.equalTo(profileView.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalTo(30)
+        }
+        
+        profileNameView.addSubview(profileNameLbl)
+        profileNameLbl.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.width.equalToSuperview().inset(10)
+            make.left.equalToSuperview().offset(30)
+            make.width.equalToSuperview().multipliedBy(0.5)
+            make.height.equalTo(20)
+        }
+        
+        profileNameView.addSubview(profileEditBtn)
+        profileEditBtn.snp.makeConstraints { make in
+            make.left.equalTo(profileNameLbl.snp.right).offset(3)
+            make.centerY.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.12)
+            make.height.equalTo(profileNameLbl)
         }
         
     }
+    
+    // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = contentTable.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CustomViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CustomViewCell
             cell.backgroundColor = UIColor.white
             cell.dayLabel.text = "Day \(indexPath.row+1)"
+            cell.cellButton.addTarget(self, action: #selector(btnOpenCaseTapped), for: .touchUpInside)
             return cell
+    }
+    
+    // MARK: - Local Functions
+    
+    @objc func btnOpenCaseTapped() {
+        print("Ngeeeeee")
     }
     
 }

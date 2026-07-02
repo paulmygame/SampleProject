@@ -24,6 +24,14 @@ class CustomViewCell: UITableViewCell {
         return lbl
     }()
     
+    lazy var cellButton: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("manok", for: .normal)
+        btn.backgroundColor = .red
+        btn.layer.cornerRadius = 5
+        btn.addTarget(self, action: #selector(didTapBtn), for: .touchUpInside)
+        return btn
+    }()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -37,7 +45,7 @@ class CustomViewCell: UITableViewCell {
     
     func setupView() {
         self.selectionStyle = .none
-        addSubview(cellView)
+        self.addSubview(cellView)
         cellView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview()
@@ -49,6 +57,19 @@ class CustomViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(10)
             make.width.equalToSuperview().multipliedBy(0.5)
             make.centerY.equalToSuperview()
+            
         }
+        
+        cellView.addSubview(cellButton)
+        cellButton.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(10)
+            make.width.equalToSuperview().multipliedBy(0.3)
+            make.height.equalTo(30)
+            make.centerY.equalToSuperview()
+        }
+    }
+    
+    @objc func didTapBtn(){
+        print("Ngeeeeee")
     }
 }
