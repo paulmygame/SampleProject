@@ -11,7 +11,7 @@ class HomeView: UIView {
     
     lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        view.backgroundColor = .clear
         return view
     }()
     
