@@ -21,6 +21,14 @@ class SplashScreenView: UIViewController {
         view.backgroundColor = .white
         
         setupUI()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            let homeVC = OnboardingView()
+            self.navigationController?.setViewControllers(
+                [homeVC],
+                animated: true
+            )
+        }
     }
     
     private func setupUI() {

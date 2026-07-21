@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: UIView {
+class HomeView: UIViewController {
     
     lazy var mainView: UIView = {
         let view = UIView()
@@ -24,20 +24,17 @@ class HomeView: UIView {
         return lbl
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
         setupView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
 }
 
 extension HomeView {
     public func setupView() {
-        addSubview(mainView)
+        view.addSubview(mainView)
         mainView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.centerX.equalToSuperview()
