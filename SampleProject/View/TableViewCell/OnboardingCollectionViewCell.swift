@@ -27,7 +27,7 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     private let descriptionLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 16)
+        lbl.font = .systemFont(ofSize: 14)
         lbl.textColor = .gray
         lbl.textAlignment = .center
         lbl.numberOfLines = 0
@@ -36,6 +36,7 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -44,10 +45,10 @@ final class OnboardingCollectionViewCell: UICollectionViewCell {
     
     private func setupUI() {
         backgroundColor = .white
-
-        addSubview(imageView)
-        addSubview(titleLabel)
-        addSubview(descriptionLabel)
+        
+        contentView.addSubview(imageView)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(descriptionLabel)
 
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(40)
