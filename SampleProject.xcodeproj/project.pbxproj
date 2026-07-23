@@ -200,9 +200,10 @@
 			children = (
 				DA2FF303300B320F0072258F /* SplashScreen */,
 				DA2FF306300B3EB60072258F /* OnBoarding */,
+				DAA94B553011E53F005E50FE /* Authentication */,
+				DAA94B5A3011E59A005E50FE /* Location */,
+				DAA94B5B3011E5BF005E50FE /* Home */,
 				DAD443F42C07389B00CCCCD6 /* TableViewCell */,
-				DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */,
-				DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +222,61 @@
 				DAA6D5072C9E535E0020AE8B /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAA94B553011E53F005E50FE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				DAA94B593011E572005E50FE /* Verification */,
+				DAA94B583011E560005E50FE /* ForgotPassword */,
+				DAA94B573011E557005E50FE /* Register */,
+				DAA94B563011E552005E50FE /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		DAA94B563011E552005E50FE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		DAA94B573011E557005E50FE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		DAA94B583011E560005E50FE /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		DAA94B593011E572005E50FE /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		DAA94B5A3011E59A005E50FE /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		DAA94B5B3011E5BF005E50FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */,
+				DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DAD443F42C07389B00CCCCD6 /* TableViewCell */ = {
