@@ -25,6 +25,7 @@ final class PasswordTextField: AuthTextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupPasswordUI()
     }
     
     required init?(coder: NSCoder) {
