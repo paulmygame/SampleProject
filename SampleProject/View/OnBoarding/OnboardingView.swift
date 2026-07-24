@@ -84,7 +84,7 @@ private extension OnboardingView {
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalTo(pageControl.snp.top).offset(-20)
+            make.bottom.equalTo(pageControl.snp.top).offset(-25)
         }
 
         pageControl.snp.makeConstraints { make in
