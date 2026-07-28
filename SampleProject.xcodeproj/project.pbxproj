@@ -34,6 +34,7 @@
 		DAA94B643011EEA2005E50FE /* AuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA94B633011EEA2005E50FE /* AuthTextField.swift */; };
 		DAA94B663011F9DB005E50FE /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA94B653011F9DB005E50FE /* PasswordTextField.swift */; };
 		DAB5E7CB2C75EC5800449E3E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */; };
+		DABBCB36301855720091B8C3 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABBCB35301855720091B8C3 /* SocialButton.swift */; };
 		DABDDA3F2C04CBD400E7DBDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */; };
 		DAD443F62C0738BA00CCCCD6 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD443F52C0738BA00CCCCD6 /* CustomViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		DAA94B633011EEA2005E50FE /* AuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTextField.swift; sourceTree = "<group>"; };
 		DAA94B653011F9DB005E50FE /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		DAB5E7CA2C75EC5800449E3E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DABBCB35301855720091B8C3 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		DABDDA3E2C04CBD400E7DBDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DAD443F52C0738BA00CCCCD6 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,6 +306,7 @@
 				DAA94B653011F9DB005E50FE /* PasswordTextField.swift */,
 				DA3D3CFB3013152B0060BFE8 /* PrimaryButton.swift */,
 				DA3D3CFD301316A30060BFE8 /* CheckboxView.swift */,
+				DABBCB35301855720091B8C3 /* SocialButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				DAA94B623011E76D005E50FE /* AuthHeaderView.swift in Sources */,
 				DA3D3CFE301316A30060BFE8 /* CheckboxView.swift in Sources */,
 				DA2FF30A300B41AF0072258F /* OnboardingViewModel.swift in Sources */,
+				DABBCB36301855720091B8C3 /* SocialButton.swift in Sources */,
 				DAA6D5082C9E535E0020AE8B /* UIColor+Extension.swift in Sources */,
 				DA0BA125300789D000633E04 /* WeatherModel.swift in Sources */,
 				DA09C5452FF629C700517BBA /* UserModel.swift in Sources */,

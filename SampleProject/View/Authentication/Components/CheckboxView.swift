@@ -39,7 +39,7 @@ final class CheckboxView: UIControl {
     init(title: String) {
         super.init(frame: .zero)
         titleLabel.text = title
-        
+        setupUI()
         
     }
     
