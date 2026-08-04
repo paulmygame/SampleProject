@@ -32,7 +32,7 @@ final class PasswordTextField: AuthTextField {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
+ 
 extension PasswordTextField {
     func setupPasswordUI() {
         textField.isSecureTextEntry = true
@@ -55,8 +55,7 @@ extension PasswordTextField {
 private extension PasswordTextField {
 
     @objc func togglePassword() {
-
-        isPasswordVisible.toggle()
+         isPasswordVisible.toggle()
         textField.isSecureTextEntry = !isPasswordVisible
 
         let image = isPasswordVisible ? "eye" : "eye.slash"
