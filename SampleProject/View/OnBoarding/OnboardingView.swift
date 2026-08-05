@@ -191,10 +191,10 @@ private extension OnboardingView {
 
             UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
 
-            let home = HomeView()
+            let login = LoginView()
 
             navigationController?.setViewControllers(
-                [home],
+                [login],
                 animated: true
             )
 
@@ -205,9 +205,9 @@ private extension OnboardingView {
     @objc func skipTapped() {
 
         UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
-        let home = HomeView()
+        let login = LoginView()
         navigationController?.setViewControllers(
-            [home],
+            [login],
             animated: true
         )
 

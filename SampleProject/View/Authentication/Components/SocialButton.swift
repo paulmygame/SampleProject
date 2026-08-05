@@ -7,6 +7,34 @@
 
 import UIKit
 
+enum AppColor {
+
+    static let primary = UIColor(
+        red: 255/255,
+        green: 118/255,
+        blue: 67/255,
+        alpha: 1
+    )
+
+}
+
+enum SocialProvider {
+    case facebook
+    case google
+    case apple
+
+    var image: UIImage? {
+        switch self {
+        case .facebook:
+            return UIImage(named: "facebook")
+        case .google:
+            return UIImage(named: "google")
+        case .apple:
+            return UIImage(named: "apple")
+        }
+    }
+}
+
 class SocialButton: UIControl {
     
     private let containerView: UIView = {
