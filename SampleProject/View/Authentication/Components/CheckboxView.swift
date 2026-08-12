@@ -40,7 +40,7 @@ final class CheckboxView: UIControl {
         super.init(frame: .zero)
         titleLabel.text = title
         setupUI()
-        
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {

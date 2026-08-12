@@ -11,6 +11,7 @@ final class PrimaryButton: UIButton {
     
     init(title: String) {
         super.init(frame: .zero)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
