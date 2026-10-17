@@ -55,11 +55,24 @@ extension PasswordTextField {
 private extension PasswordTextField {
 
     @objc func togglePassword() {
-         isPasswordVisible.toggle()
+        let currentText = textField.text
+        let selectedRange = textField.selectedTextRange
+
+        isPasswordVisible.toggle()
         textField.isSecureTextEntry = !isPasswordVisible
 
-        let image = isPasswordVisible ? "eye" : "eye.slash"
-        eyeButton.setImage(UIImage(systemName: image), for: .normal)
+        eyeButton.setImage(
+            UIImage(
+                systemName: isPasswordVisible ? "eye" : "eye.slash"
+            ),
+            for: .normal
+        )
+
+        textField.text = currentText
+
+        if let selectedRange {
+            textField.selectedTextRange = selectedRange
+        }
     }
 
 }

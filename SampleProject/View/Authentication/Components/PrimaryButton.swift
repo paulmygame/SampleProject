@@ -36,6 +36,18 @@ private extension PrimaryButton {
         snp.makeConstraints { make in
             make.height.equalTo(56)
         }
+        
+        addTarget(
+            self,
+            action: #selector(handleTouchDown),
+            for: .touchDown
+        )
+
+        addTarget(
+            self,
+            action: #selector(handleTouchUp),
+            for: [.touchUpInside, .touchUpOutside, .touchCancel]
+        )
     }
 }
 
@@ -69,4 +81,21 @@ extension PrimaryButton {
 
     }
 
+}
+
+extension PrimaryButton {
+    @objc private func handleTouchDown() {
+        UIView.animate(withDuration: 0.12) {
+            self.transform = CGAffineTransform(
+                scaleX: 0.97,
+                y: 0.97
+            )
+        }
+    }
+
+    @objc private func handleTouchUp() {
+        UIView.animate(withDuration: 0.12) {
+            self.transform = .identity
+        }
+    }
 }

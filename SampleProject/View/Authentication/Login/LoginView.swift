@@ -92,6 +92,17 @@ class LoginView: UIViewController {
         setupUI()
         configureViews()
         setupConstraints()
+        
+        setupActions()
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard)
+        )
+
+        tapGesture.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tapGesture)
     }
 }
 
@@ -144,8 +155,7 @@ extension LoginView {
                 .foregroundColor: UIColor.gray,
                 .font: UIFont.systemFont(ofSize: 15)
             ]
-        )
-
+        ) 
         attributed.append(
             NSAttributedString(
                 string: "SIGN UP",
@@ -255,5 +265,122 @@ extension LoginView {
             $0.width.equalTo(232)
             $0.bottom.equalToSuperview().offset(-40)
         }
+    }
+}
+
+extension LoginView {
+    
+    private func setupActions() {
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+        
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
+        
+        let signupTap = UIGestureRecognizer(target: self, action: #selector(signUpTapped))
+        
+        signupTap.view?.addGestureRecognizer(signupTap)
+    }
+    
+}
+
+extension LoginView {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+}
+
+// MARK: - ACTIONS
+
+extension LoginView{
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard
+            let userInfo = notification.userInfo,
+            let keyboardFrame = userInfo[
+                UIResponder.keyboardFrameEndUserInfoKey
+            ] as? CGRect
+        else {
+            return
+        }
+
+        let keyboardFrameInView = view.convert(
+            keyboardFrame,
+            from: nil
+        )
+
+        let overlap = max(
+            0,
+            view.bounds.maxY - keyboardFrameInView.minY
+        )
+
+        scrollView.contentInset.bottom = overlap
+        scrollView.verticalScrollIndicatorInsets.bottom = overlap
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        scrollView.contentInset.bottom = 0
+        scrollView.verticalScrollIndicatorInsets.bottom = 0
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func loginTapped() {
+        view.endEditing(true)
+
+        // UI testing only.
+        // Add validation and authentication later.
+        let homeView = HomeView()
+        navigationController?.pushViewController(
+            homeView,
+            animated: true
+        )
+    }
+    
+    @objc private func signUpTapped() {
+//        let registerView = RegisterView()
+//
+//        navigationController?.pushViewController(
+//            registerView,
+//            animated: true
+//        )
+    }
+    
+    @objc private func forgotPasswordTapped() {
+//        let forgotPasswordView = ForgotPasswordView()
+//
+//        navigationController?.pushViewController(
+//            forgotPasswordView,
+//            animated: true
+//        )
     }
 }
