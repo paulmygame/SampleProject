@@ -47,6 +47,36 @@ class LoginView: UIViewController {
     )
 
     private let signUpLabel = UILabel()
+    
+    private let signUpButton: UIButton = {
+        let button = UIButton(type: .system)
+
+        let attributedTitle = NSMutableAttributedString(
+            string: "Don't have an account? ",
+            attributes: [
+                .foregroundColor: UIColor.gray,
+                .font: UIFont.systemFont(ofSize: 15)
+            ]
+        )
+
+        attributedTitle.append(
+            NSAttributedString(
+                string: "SIGN UP",
+                attributes: [
+                    .foregroundColor: AppColor.primary,
+                    .font: UIFont.boldSystemFont(ofSize: 15)
+                ]
+            )
+        )
+
+        button.setAttributedTitle(
+            attributedTitle,
+            for: .normal
+        )
+
+        button.contentHorizontalAlignment = .center
+        return button
+    }()
 
     private let facebookButton = SocialButton(image: UIImage(named: "facebook"))
 
@@ -121,7 +151,7 @@ extension LoginView {
         contentView.addSubview(forgotPasswordButton)
 
         contentView.addSubview(loginButton)
-        contentView.addSubview(signUpLabel)
+        contentView.addSubview(signUpButton)
 
         contentView.addSubview(orLabel)
         contentView.addSubview(lineLeft)
@@ -229,7 +259,7 @@ extension LoginView {
 
         // MARK: - Sign Up
 
-        signUpLabel.snp.makeConstraints {
+        signUpButton.snp.makeConstraints {
             $0.top.equalTo(loginButton.snp.bottom).offset(24)
             $0.centerX.equalToSuperview()
         }
@@ -237,7 +267,7 @@ extension LoginView {
         // MARK: - OR
 
         orLabel.snp.makeConstraints {
-            $0.top.equalTo(signUpLabel.snp.bottom).offset(30)
+            $0.top.equalTo(signUpButton.snp.bottom).offset(30)
             $0.centerX.equalToSuperview()
         }
 
@@ -275,9 +305,11 @@ extension LoginView {
         
         forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordTapped), for: .touchUpInside)
         
-        let signupTap = UIGestureRecognizer(target: self, action: #selector(signUpTapped))
+        signUpButton.addTarget(self, action: #selector(signUpTapped), for: .touchUpInside)
         
-        signupTap.view?.addGestureRecognizer(signupTap)
+//        let signupTap = UIGestureRecognizer(target: self, action: #selector(signUpTapped))
+//        
+//        signupTap.view?.addGestureRecognizer(signupTap)
     }
     
 }
@@ -367,20 +399,20 @@ extension LoginView{
     }
     
     @objc private func signUpTapped() {
-//        let registerView = RegisterView()
-//
-//        navigationController?.pushViewController(
-//            registerView,
-//            animated: true
-//        )
+        let registerView = RegisterView()
+
+        navigationController?.pushViewController(
+            registerView,
+            animated: true
+        )
     }
     
     @objc private func forgotPasswordTapped() {
-//        let forgotPasswordView = ForgotPasswordView()
-//
-//        navigationController?.pushViewController(
-//            forgotPasswordView,
-//            animated: true
-//        )
+        let forgotPasswordView = ForgotPasswordView()
+
+        navigationController?.pushViewController(
+            forgotPasswordView,
+            animated: true
+        )
     }
 }
